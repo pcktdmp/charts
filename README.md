@@ -1,7 +1,12 @@
 # fahclient
 Helm Chart for Folding at Home Client (FAHClient)
 
-Install Folding@Home on Kubernetes
+Install [Folding@Home](https://foldingathome.org/) on Kubernetes
+
+## Motivation
+
+Learned about the Folding@Home initiative in the COVID-19 crisis.
+Companies, enterprises and individuals can donate their compute capacity that is available inside their Kubernetes clusters to foldingathome.org.
 
 ## TL;DR
 
