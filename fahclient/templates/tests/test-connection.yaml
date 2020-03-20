@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "fahclient.fullname" . }}-test-connection"
+  labels:
+    {{- include "fahclient.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "fahclient.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
