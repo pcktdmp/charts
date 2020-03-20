@@ -3,14 +3,18 @@ Helm Chart for Folding at Home Client (FAHClient)
 
 Install Folding@Home on Kubernetes
 
-Until (this)[https://github.com/johnktims/folding-at-home/pull/10 PR has not been released inside the image use:
+First install `jq`.
+
+Until (this)[https://github.com/johnktims/folding-at-home/pull/10 PR to drop privileges inside the container use:
 
 ```bash
-helm install https://github.com/pcktdmp/fahclient/archive/0.1.1.tar.gz --set securityContext.runAsNonRoot=false --name fahclient
+export FAHCLIENT_RELEASE_VERSION="$(curl -s https://api.github.com/repos/pcktdmp/fahclient/releases/latest | jq -r .tag_name)"
+helm install https://github.com/pcktdmp/fahclient/archive/"${FAHCLIENT_RELEASE_VERSION}".tar.gz --set securityContext.runAsNonRoot=false --name fahclient
 ```
 
 Once released use:
 
 ```bash
-helm install https://github.com/pcktdmp/fahclient/archive/0.1.1.tar.gz --name fahclient
+export FAHCLIENT_RELEASE_VERSION="$(curl -s https://api.github.com/repos/pcktdmp/fahclient/releases/latest | jq -r .tag_name)"
+helm install https://github.com/pcktdmp/fahclient/archive/"${FAHCLIENT_RELEASE_VERSION}".tar.gz --name fahclient
 ```
