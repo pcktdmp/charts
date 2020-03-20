@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  fahclient:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2020-03-20T13:18:29.311863+01:00"
+    description: A Helm chart for Kubernetes
+    digest: aca1dba0b1b53eb9bd8c65350beb7dd400d570fc30e94d94214dd83f079acfc6
+    name: fahclient
+    type: application
+    urls:
+    - https://pcktdmp.github.io/charts/fahclient-1.0.0.tgz
+    version: 1.0.0
+generated: "2020-03-20T13:18:29.309936+01:00"
