@@ -26,3 +26,8 @@ Once released use:
 helm repo add pcktdmp https://pcktdmp.github.io/charts
 helm install pcktdmp/fahclient --name fahclient
 ```
+
+## Support
+
+If you need basic support to getting up and running please
+drop me an e-mail at <serge@se-cured.org>.
