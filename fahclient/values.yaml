@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: johnktims/folding-at-home
+  repository: pcktdmp/fahclient
   pullPolicy: IfNotPresent
 
 fahClient:
@@ -27,8 +27,8 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name:
 
-podSecurityContext: {}
-  #fsGroup: 2000
+podSecurityContext:
+  fsGroup: 9999
 
 securityContext:
   capabilities:
@@ -36,7 +36,7 @@ securityContext:
     - ALL
   readOnlyRootFilesystem: false 
   runAsNonRoot: true
-  #runAsUser: 1000
+  runAsUser: 9999
 
 service:
   type: ClusterIP
