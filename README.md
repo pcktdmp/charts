@@ -13,15 +13,6 @@ Companies, enterprises and individuals can donate their compute capacity that is
 
 ## TL;DR
 
-Until [this](https://github.com/johnktims/folding-at-home/pull/10) PR is released to drop privileges inside the container use:
-
-```bash
-helm repo add pcktdmp https://pcktdmp.github.io/charts
-helm install pcktdmp/fahclient --set securityContext.runAsNonRoot=false --name fahclient
-```
-
-Once released use:
-
 ```bash
 helm repo add pcktdmp https://pcktdmp.github.io/charts
 helm install pcktdmp/fahclient --name fahclient
