@@ -13,6 +13,7 @@ spec:
       app: {{ include "fahclient.fullname" . }}
   serviceName: {{ include "fahclient.fullname" . }}
   replicas: {{ .Values.replicaCount }}
+  podManagementPolicy: Parallel
   template:
     metadata:
       labels:
@@ -22,10 +23,7 @@ spec:
       initContainers:
       - name: init
         image: alpine:latest
-        command:
-          - 'sh'
-          - '-c'
-          - "mkdir /home/folder && chown {{ .Values.securityContext.runAsUser }}:{{ .Values.podSecurityContext.fsGroup }} /home/folder && chmod 750 /home/folder"]
+        command: ['sh', '-c', "chmod 755 /home && mkdir /home/folder && chown {{ .Values.securityContext.runAsUser }}:{{ .Values.podSecurityContext.fsGroup }} /home/folder && chmod 750 /home/folder"]
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -44,7 +42,9 @@ spec:
           name: http
         volumeMounts:
         - name: folder
-          mountPath: /home
+          mountPath: /home/folder
+        resources:
+            {{- toYaml .Values.resources | nindent 12 }}
   volumeClaimTemplates:
   - metadata:
       name: folder
@@ -52,4 +52,4 @@ spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 10Gi
+          storage: 1Gi
