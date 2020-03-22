@@ -22,7 +22,10 @@ spec:
       initContainers:
       - name: init
         image: alpine:latest
-        command: ['sh', '-c', "mkdir /home/folder && chown {{ .Values.securityContext.runAsUser }}:{{ .Values.podSecurityContext.fsGroup }} /home/folder && chmod 750 /home/folder"]
+        command:
+          - 'sh'
+          - '-c'
+          - "mkdir /home/folder && chown {{ .Values.securityContext.runAsUser }}:{{ .Values.podSecurityContext.fsGroup }} /home/folder && chmod 750 /home/folder"]
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
