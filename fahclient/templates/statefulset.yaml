@@ -1,0 +1,52 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "fahclient.fullname" . }}
+spec:
+{{- with .Values.imagePullSecrets }}
+  imagePullSecrets:
+    {{- toYaml . | nindent 8 }}
+{{- end }}
+  selector:
+    matchLabels:
+      app: {{ include "fahclient.fullname" . }}
+  serviceName: {{ include "fahclient.fullname" . }}
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "fahclient.fullname" . }}
+    spec:
+      terminationGracePeriodSeconds: 10
+      initContainers:
+      - name: init
+        image: alpine:latest
+        command: ['sh', '-c', "mkdir /home/folder && chown {{ .Values.securityContext.runAsUser }}:{{ .Values.podSecurityContext.fsGroup }} /home/folder && chmod 750 /home/folder"]
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+      - name: {{ .Chart.Name }}
+        securityContext:
+          {{- toYaml .Values.securityContext | nindent 12 }}
+        image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        args:
+          - --user={{ .Values.fahClient.user }}
+          - --team={{ .Values.fahClient.team }}
+          - --smp={{ .Values.fahClient.smp }}
+          - --power={{ .Values.fahClient.power }}
+        ports:
+        - containerPort: 7396
+          name: http
+        volumeMounts:
+        - name: folder
+          mountPath: /home
+  volumeClaimTemplates:
+  - metadata:
+      name: folder
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 10Gi

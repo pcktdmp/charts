@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ include "fahclient.fullname" . }}
   labels:
-    {{- include "fahclient.labels" . | nindent 4 }}
+    app: {{ include "fahclient.fullname" . }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "fahclient.selectorLabels" . | nindent 4 }}
+    app: {{ include "fahclient.fullname" . }}
