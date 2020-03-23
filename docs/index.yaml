@@ -3,7 +3,17 @@ entries:
   fahclient:
   - apiVersion: v2
     appVersion: latest
-    created: "2020-03-23T16:20:00.556647+01:00"
+    created: "2020-03-23T19:35:31.748293+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 2b5644d42745e1ac4200c2367743c41709bc5fddba484660ba3b5a0473823853
+    name: fahclient
+    type: application
+    urls:
+    - https://pcktdmp.github.io/charts/fahclient-2.1.0.tgz
+    version: 2.1.0
+  - apiVersion: v2
+    appVersion: latest
+    created: "2020-03-23T19:35:31.747802+01:00"
     description: A Helm chart for Kubernetes
     digest: cdc6f32d835a65e5f82e22ee3e47de9cda16f14bcf30656c50cf198d2b2feb6b
     name: fahclient
@@ -13,7 +23,7 @@ entries:
     version: 2.0.2
   - apiVersion: v2
     appVersion: latest
-    created: "2020-03-23T16:20:00.555852+01:00"
+    created: "2020-03-23T19:35:31.746681+01:00"
     description: A Helm chart for Kubernetes
     digest: ed5dbdc5e509c694ccfdab07a74ca80312f26d110daed3128462135b32681cc5
     name: fahclient
@@ -23,7 +33,7 @@ entries:
     version: 2.0.1
   - apiVersion: v2
     appVersion: latest
-    created: "2020-03-23T16:20:00.55457+01:00"
+    created: "2020-03-23T19:35:31.745615+01:00"
     description: A Helm chart for Kubernetes
     digest: 6c4476f6b0e5e64d42e989d085d12ecd81efad9593c37c1320aa0aeefb5a7184
     name: fahclient
@@ -33,7 +43,7 @@ entries:
     version: 2.0.0
   - apiVersion: v2
     appVersion: latest
-    created: "2020-03-23T16:20:00.553743+01:00"
+    created: "2020-03-23T19:35:31.744434+01:00"
     description: A Helm chart for Kubernetes
     digest: ff3222e0cd665b0f0107ea29ab6f2c65f4cbe5c54ad251330f834b623ca0db6e
     name: fahclient
@@ -43,7 +53,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: latest
-    created: "2020-03-23T16:20:00.552909+01:00"
+    created: "2020-03-23T19:35:31.742939+01:00"
     description: A Helm chart for Kubernetes
     digest: aca1dba0b1b53eb9bd8c65350beb7dd400d570fc30e94d94214dd83f079acfc6
     name: fahclient
@@ -51,4 +61,4 @@ entries:
     urls:
     - https://pcktdmp.github.io/charts/fahclient-1.0.0.tgz
     version: 1.0.0
-generated: "2020-03-23T16:20:00.551588+01:00"
+generated: "2020-03-23T19:35:31.740927+01:00"
