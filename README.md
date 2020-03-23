@@ -11,6 +11,11 @@ https://foldingathome.org/2020/03/15/coronavirus-what-were-doing-and-how-you-can
 
 Companies, enterprises and individuals can donate their compute capacity that is available inside their Kubernetes clusters to foldingathome.org.
 
+## Features
+
+* Make use of `StatefulSet` with Persistent Volumes so that compute capacity does not get lost when being rescheduled on other nodes.
+This fits for example the design pattern of using Spot Instances in AWS EKS.
+
 ## TL;DR
 
 ```bash
