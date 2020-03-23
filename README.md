@@ -15,6 +15,7 @@ Companies, enterprises and individuals can donate their compute capacity that is
 
 * Make use of `StatefulSet` with Persistent Volumes so that compute capacity does not get lost when being rescheduled on other nodes.
 This fits for example the design pattern of using Spot Instances in AWS EKS.
+* Horizontal Pod Autoscaling
 
 ## TL;DR
 

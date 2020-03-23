@@ -1,0 +1,12 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "fahclient.fullname" . }}
+spec:
+  maxReplicas: {{ .Values.horizontalPodAutoscaling.maxReplicas }}
+  minReplicas: {{ .Values.horizontalPodAutoscaling.minReplicas }}
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: StatefulSet
+    name: {{ include "fahclient.fullname" . }}
+  targetCPUUtilizationPercentage: {{ .Values.horizontalPodAutoscaling.targetCPUUtilizationPercentage }}
