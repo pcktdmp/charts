@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: pcktdmp/fahclient
+  repository: johnktims/folding-at-home
   pullPolicy: IfNotPresent
 
 fahClient:
