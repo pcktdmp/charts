@@ -31,45 +31,45 @@ drop me an e-mail at <serge@se-cured.org>.
 
 ## Chart Values
 
-| Key | Type | Default | Description |
-|-----|------|---------|-------------|
-| fahClient.extraArgs | object | `{}` |  |
-| fahClient.power | string | `"full"` |  |
-| fahClient.smp | bool | `true` |  |
-| fahClient.team | int | `0` |  |
-| fahClient.user | string | `"Anonymous"` |  |
-| fullnameOverride | string | `""` |  |
-| horizontalPodAutoscaling.enabled | bool | `false` |  |
-| horizontalPodAutoscaling.maxReplicas | int | `1` |  |
-| horizontalPodAutoscaling.minReplicas | int | `1` |  |
-| horizontalPodAutoscaling.targetCPUUtilizationPercentage | int | `90` |  |
-| image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"johnktims/folding-at-home"` |  |
-| image.tag | string | `"latest"` |  |
-| imagePullSecrets | list | `[]` |  |
-| ingress.annotations | object | `{}` |  |
-| ingress.enabled | bool | `false` |  |
-| ingress.hosts[0].host | string | `"chart-example.local"` |  |
-| ingress.hosts[0].paths | list | `[]` |  |
-| ingress.tls | list | `[]` |  |
-| nameOverride | string | `""` |  |
-| podSecurityContext.fsGroup | int | `9999` |  |
-| replicaCount | int | `1` |  |
-| resources.limits.cpu | float | `1` |  |
-| resources.limits.memory | string | `"256Mi"` |  |
-| resources.requests.cpu | float | `1` |  |
-| resources.requests.memory | string | `"128Mi"` |  |
-| securityContext.capabilities.drop[0] | string | `"ALL"` |  |
-| securityContext.readOnlyRootFilesystem | bool | `false` |  |
-| securityContext.runAsNonRoot | bool | `true` |  |
-| securityContext.runAsUser | int | `9999` |  |
-| service.port | int | `80` |  |
-| service.type | string | `"ClusterIP"` |  |
-| serviceAccount.annotations | object | `{}` |  |
-| serviceAccount.create | bool | `false` |  |
-| serviceAccount.name | string | `nil` |  |
-| verticalPodAutoscaling.enabled | bool | `false` |  |
-| verticalPodAutoscaling.updateMode | string | `"Auto"` |  |
+| Key | Type | Default |
+|-----|------|---------|
+| fahClient.extraArgs | object | `{}` |
+| fahClient.power | string | `"full"` |
+| fahClient.smp | bool | `true` |
+| fahClient.team | int | `0` |
+| fahClient.user | string | `"Anonymous"` |
+| fullnameOverride | string | `""` |
+| horizontalPodAutoscaling.enabled | bool | `false` |
+| horizontalPodAutoscaling.maxReplicas | int | `1` |
+| horizontalPodAutoscaling.minReplicas | int | `1` |
+| horizontalPodAutoscaling.targetCPUUtilizationPercentage | int | `90` |
+| image.pullPolicy | string | `"IfNotPresent"` |
+| image.repository | string | `"johnktims/folding-at-home"` |
+| image.tag | string | `"latest"` |
+| imagePullSecrets | list | `[]` |
+| ingress.annotations | object | `{}` |
+| ingress.enabled | bool | `false` |
+| ingress.hosts[0].host | string | `"chart-example.local"` |
+| ingress.hosts[0].paths | list | `[]` |
+| ingress.tls | list | `[]` |
+| nameOverride | string | `""` |
+| podSecurityContext.fsGroup | int | `9999` |
+| replicaCount | int | `1` |
+| resources.limits.cpu | float | `1` |
+| resources.limits.memory | string | `"256Mi"` |
+| resources.requests.cpu | float | `1` |
+| resources.requests.memory | string | `"128Mi"` |
+| securityContext.capabilities.drop[0] | string | `"ALL"` |
+| securityContext.readOnlyRootFilesystem | bool | `false` |
+| securityContext.runAsNonRoot | bool | `true` |
+| securityContext.runAsUser | int | `9999` |
+| service.port | int | `80` |
+| service.type | string | `"ClusterIP"` |
+| serviceAccount.annotations | object | `{}` |
+| serviceAccount.create | bool | `false` |
+| serviceAccount.name | string | `nil` |
+| verticalPodAutoscaling.enabled | bool | `false` |
+| verticalPodAutoscaling.updateMode | string | `"Auto"` |
 
 ## FAQ
 
