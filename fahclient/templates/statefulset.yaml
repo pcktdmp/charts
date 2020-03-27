@@ -37,6 +37,9 @@ spec:
           - --team={{ .Values.fahClient.team }}
           - --smp={{ .Values.fahClient.smp }}
           - --power={{ .Values.fahClient.power }}
+        {{- with .Values.fahClient.extraArgs }}
+          {{- toYaml . | nindent 10 }}
+        {{- end }}
         ports:
         - containerPort: 7396
           name: http

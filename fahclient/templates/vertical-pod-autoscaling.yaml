@@ -1,0 +1,13 @@
+{{- if .Values.verticalPodAutoscaling.enabled }}
+apiVersion: "autoscaling.k8s.io/v1beta2"
+kind: VerticalPodAutoscaler
+metadata:
+  name: {{ include "fahclient.fullname" . }}
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind: StatefulSet
+    name: {{ include "fahclient.fullname" . }}
+  updatePolicy:
+    updateMode: {{ .Values.verticalPodAutoscaling.updateMode }}
+{{- end }}
