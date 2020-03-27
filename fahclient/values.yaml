@@ -9,7 +9,16 @@ image:
   tag: latest
   pullPolicy: IfNotPresent
 
+# to use Vertical Pod Autoscaling install:
+# https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler
+verticalPodAutoscaling:
+  enabled: false
+  # valid values are Auto, Recreate, Initial, Off
+  # https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler
+  updateMode: Auto
+
 horizontalPodAutoscaling:
+  enabled: false
   maxReplicas: 1
   minReplicas: 1
   targetCPUUtilizationPercentage: 90
@@ -19,6 +28,11 @@ fahClient:
   team: 0
   smp: true
   power: full
+  # remove {} and uncomment/add arguments
+  extraArgs: {}
+    #- --client-threads=1
+    #- --passkey=bcddf917c5b90f22c3cf6288699b2a005e2350289a44
+    #- --chdir=/some/other/workdir
 
 imagePullSecrets: []
 nameOverride: ""
@@ -61,10 +75,12 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
+# set to some sane defaults to prevent interference
+# of your other workload.
 resources:
   limits:
-    cpu: 0.5
+    cpu: 1.0
     memory: 256Mi
   requests:
-    cpu: 0.3
+    cpu: 1.0
     memory: 128Mi
