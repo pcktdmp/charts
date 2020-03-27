@@ -28,7 +28,7 @@ fahClient:
   team: 0
   smp: true
   power: full
-  # remove {} and uncomment/add arguments
+  # remove {} and uncomment/add arguments as "- --arg=value"
   extraArgs: {}
     #- --client-threads=1
     #- --passkey=bcddf917c5b90f22c3cf6288699b2a005e2350289a44

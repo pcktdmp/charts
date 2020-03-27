@@ -16,7 +16,7 @@ Companies, enterprises and individuals can donate their compute capacity that is
 * Make use of `StatefulSet` with Persistent Volumes so that compute capacity does not get lost when being rescheduled on other nodes.
 This fits for example the design pattern of using Spot Instances in AWS EKS.
 * Horizontal Pod Autoscaling
-q
+
 ## TL;DR
 
 ```bash
@@ -29,7 +29,51 @@ helm install pcktdmp/fahclient --name fahclient
 If you need basic support to getting up and running please
 drop me an e-mail at <serge@se-cured.org>.
 
+## Chart Values
+
+| Key | Type | Default |
+|-----|------|---------|
+| fahClient.extraArgs | object | `{}` |
+| fahClient.power | string | `"full"` |
+| fahClient.smp | bool | `true` |
+| fahClient.team | int | `0` |
+| fahClient.user | string | `"Anonymous"` |
+| fullnameOverride | string | `""` |
+| horizontalPodAutoscaling.enabled | bool | `false` |
+| horizontalPodAutoscaling.maxReplicas | int | `1` |
+| horizontalPodAutoscaling.minReplicas | int | `1` |
+| horizontalPodAutoscaling.targetCPUUtilizationPercentage | int | `90` |
+| image.pullPolicy | string | `"IfNotPresent"` |
+| image.repository | string | `"johnktims/folding-at-home"` |
+| image.tag | string | `"latest"` |
+| imagePullSecrets | list | `[]` |
+| ingress.annotations | object | `{}` |
+| ingress.enabled | bool | `false` |
+| ingress.hosts[0].host | string | `"chart-example.local"` |
+| ingress.hosts[0].paths | list | `[]` |
+| ingress.tls | list | `[]` |
+| nameOverride | string | `""` |
+| podSecurityContext.fsGroup | int | `9999` |
+| replicaCount | int | `1` |
+| resources.limits.cpu | float | `1` |
+| resources.limits.memory | string | `"256Mi"` |
+| resources.requests.cpu | float | `1` |
+| resources.requests.memory | string | `"128Mi"` |
+| securityContext.capabilities.drop[0] | string | `"ALL"` |
+| securityContext.readOnlyRootFilesystem | bool | `false` |
+| securityContext.runAsNonRoot | bool | `true` |
+| securityContext.runAsUser | int | `9999` |
+| service.port | int | `80` |
+| service.type | string | `"ClusterIP"` |
+| serviceAccount.annotations | object | `{}` |
+| serviceAccount.create | bool | `false` |
+| serviceAccount.name | string | `nil` |
+| verticalPodAutoscaling.enabled | bool | `false` |
+| verticalPodAutoscaling.updateMode | string | `"Auto"` |
+
 ## FAQ
 
 Q: I want to stop folding but don't want work to be lost, what do I need to do?
-A: Assuming you have the pods running in a separate namespace where no other pods reside: `kubectl get pods -n <yournamespace> | awk '{print $1}' | xargs -I{} kubectl exec {} -- /usr/bin/FAHClient --send-finish`.
+
+A: Assuming you have the pods running in a separate namespace where no other pods reside: `kubectl get pods -n <yournamespace> | awk '{print $1}' | xargs -I{} kubectl exec {} -- /usr/bin/FAHClient --send-finish`.fahclient
+
