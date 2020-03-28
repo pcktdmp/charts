@@ -15,7 +15,8 @@ Companies, enterprises and individuals can donate their compute capacity that is
 
 * Make use of `StatefulSet` with Persistent Volumes so that compute capacity does not get lost when being rescheduled on other nodes.
 This fits for example the design pattern of using Spot Instances in AWS EKS.
-* Horizontal Pod Autoscaling
+* [Horizontal Pod Autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+* [Vertical Pod Autoscaling](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler)
 
 ## TL;DR
 
@@ -23,7 +24,6 @@ This fits for example the design pattern of using Spot Instances in AWS EKS.
 helm repo add pcktdmp https://pcktdmp.github.io/charts
 helm install pcktdmp/fahclient --name fahclient
 ```
-
 ## Support
 
 If you need basic support to getting up and running please
@@ -77,3 +77,7 @@ Q: I want to stop folding but don't want work to be lost, what do I need to do?
 
 A: Assuming you have the pods running in a separate namespace where no other pods reside:
 `kubectl get pods -n <yournamespace> | awk '{print $1}' | xargs -I{} kubectl exec {} -- /usr/bin/FAHClient --send-finish`.
+
+Q: How do I set up persistent storage for my cluster quickly?
+
+A: Setup an NFS server in your network or leverage an existing one and setup [nfs-client-provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client).
