@@ -33,11 +33,11 @@ drop me an e-mail at <serge@se-cured.org>.
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| fahClient.extraArgs | object | `{}` | extra arguments for `FAHClient`, passed like `- --somearg=value`  |
-| fahClient.power | string | `"full"` |  valid values are `light`, `medium`, `full` |
+| fahClient.extraArgs | object | `{}` | Extra arguments for `FAHClient`, passed like `- --somearg=value`  |
+| fahClient.power | string | `"full"` |  Valid values are `light`, `medium`, `full` |
 | fahClient.smp | bool | `true` |  |
 | fahClient.team | int | `0` | Team identifier |
-| fahClient.user | string | `"Anonymous"` | The user you identify yourself with |
+| fahClient.user | string | `"Anonymous"` | The user you identify yourself with to Folding@Home |
 | fullnameOverride | string | `""` |  |
 | horizontalPodAutoscaling.enabled | bool | `false` |  |
 | horizontalPodAutoscaling.maxReplicas | int | `1` |  |
@@ -69,7 +69,7 @@ drop me an e-mail at <serge@se-cured.org>.
 | serviceAccount.create | bool | `false` |  |
 | serviceAccount.name | string | `nil` |  |
 | verticalPodAutoscaling.enabled | bool | `false` |  |
-| verticalPodAutoscaling.updateMode | string | `"Auto"` | valid values are `Auto`, `Recreate`, `Initial`, `Off`  |
+| verticalPodAutoscaling.updateMode | string | `"Auto"` | Valid values are `Auto`, `Recreate`, `Initial`, `Off`  |
 
 ## FAQ
 
