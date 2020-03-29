@@ -14,7 +14,6 @@ image:
 verticalPodAutoscaling:
   enabled: false
   # valid values are Auto, Recreate, Initial, Off
-  # https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler
   updateMode: Auto
 
 horizontalPodAutoscaling:
@@ -57,6 +56,8 @@ securityContext:
   readOnlyRootFilesystem: false 
   runAsNonRoot: true
   runAsUser: 9999
+
+storageClassName: ""
 
 service:
   type: ClusterIP
