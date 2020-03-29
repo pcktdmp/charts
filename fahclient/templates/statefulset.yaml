@@ -53,6 +53,9 @@ spec:
       name: folder
     spec:
       accessModes: [ "ReadWriteOnce" ]
+      {{- if .Values.storageClassName }}
+      storageClassName: {{ .Values.storageClassName }}
+      {{- end }}
       resources:
         requests:
           storage: 1Gi

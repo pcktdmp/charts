@@ -43,6 +43,7 @@ drop me an e-mail at <serge@se-cured.org>.
 | horizontalPodAutoscaling.maxReplicas | int | `1` |  |
 | horizontalPodAutoscaling.minReplicas | int | `1` |  |
 | horizontalPodAutoscaling.targetCPUUtilizationPercentage | int | `90` |  |
+| storageClassName | string | `""` | When not specified take the default storage class |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"johnktims/folding-at-home"` |  |
 | image.tag | string | `"latest"` |  |
