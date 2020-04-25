@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: johnktims/folding-at-home
-  tag: latest
+  repository: foldingathome/fah-gpu
+  tag: 7.5.1
   pullPolicy: IfNotPresent
 
 # to use Vertical Pod Autoscaling install:
@@ -23,15 +23,27 @@ horizontalPodAutoscaling:
   targetCPUUtilizationPercentage: 90
 
 fahClient:
-  user: Anonymous
-  team: 0
-  smp: true
-  power: full
-  # remove {} and uncomment/add arguments as "- --arg=value"
-  extraArgs: {}
-    #- --client-threads=1
-    #- --passkey=bcddf917c5b90f22c3cf6288699b2a005e2350289a44
-    #- --chdir=/some/other/workdir
+  gpu:
+    # beta feature
+    enabled: false
+    accelerator: nvidia-tesla-p100 # or nvidia-tesla-k80 etc.
+  configXml: |
+    <config>
+    <!-- Set with your user, passkey, team-->
+    <user value="Anonymous"/>
+    <passkey value=""/>
+    <team value="0"/>
+  
+    <power value="full"/>
+  
+    <web-enable v='false'/>
+    <disable-viz v='true'/>
+    <gui-enabled v='false'/>
+    <!-- 1 slots for GPUs -->
+    <!-- beta feature: uncomment the statement below if you have set
+    fahClient.gpu.enabled to true -->
+    <!-- <slot id='0' type='GPU'> </slot> -->
+    </config>
 
 imagePullSecrets: []
 nameOverride: ""
@@ -46,9 +58,6 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name:
 
-podSecurityContext:
-  fsGroup: 9999
-
 securityContext:
   capabilities:
     drop:
@@ -56,25 +65,9 @@ securityContext:
   readOnlyRootFilesystem: false 
   runAsNonRoot: true
   runAsUser: 9999
+  runAsGroup: 9999
 
 storageClassName: ""
-
-service:
-  type: ClusterIP
-  port: 80
-
-ingress:
-  enabled: false
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: chart-example.local
-      paths: []
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
 
 # set to some sane defaults to prevent interference
 # of your other workload.
