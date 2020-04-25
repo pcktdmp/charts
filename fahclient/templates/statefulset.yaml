@@ -19,6 +19,9 @@ spec:
       labels:
         app: {{ include "fahclient.fullname" . }}
     spec:
+      {{- if .Values.priorityClassName }}
+      priorityClassName: {{ .Values.priorityClassName }}
+      {{- end }}
       terminationGracePeriodSeconds: 10
       initContainers:
       - name: init
