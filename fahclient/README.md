@@ -55,6 +55,7 @@ drop me an e-mail at <serge@se-cured.org>.
 | ingress.tls | list | `[]` |  |
 | nameOverride | string | `""` |  |
 | podSecurityContext.fsGroup | int | `9999` |  |
+| priorityClassName | string | `nil` | When not specified, take the default priority class |
 | replicaCount | int | `1` |  |
 | resources.limits.cpu | float | `1` |  |
 | resources.limits.memory | string | `"256Mi"` |  |
