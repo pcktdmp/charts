@@ -1,6 +1,6 @@
 apiVersion: v2
 name: fahclient
-description: A resilliant Helm chart for Folding@Home with GPU support
+description: A resilient Helm chart for Folding@Home with GPU support
 
 # A chart can be either an 'application' or a 'library' chart.
 #
