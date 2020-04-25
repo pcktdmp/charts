@@ -22,7 +22,7 @@ spec:
       {{- if .Values.priorityClassName }}
       priorityClassName: {{ .Values.priorityClassName }}
       {{- end }}
-      terminationGracePeriodSeconds: 10
+      terminationGracePeriodSeconds: 45
       initContainers:
       - name: init
         image: alpine:latest
@@ -38,6 +38,10 @@ spec:
             value: {{ .Values.securityContext.runAsUser | quote }}
           - name: PGID
             value: {{ .Values.securityContext.runAsGroup | quote }}
+        lifecycle:
+          preStop:
+            exec:
+              command: ["FAHClient", "--send-command", "shutdown"]
         ports:
         - containerPort: 7396
           name: http
