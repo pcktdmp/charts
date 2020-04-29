@@ -67,6 +67,10 @@ securityContext:
   runAsUser: 9999
   runAsGroup: 9999
 
+service:
+  type: ClusterIP
+  port: 80
+
 storageClassName: ""
 
 # set to some sane defaults to prevent interference
