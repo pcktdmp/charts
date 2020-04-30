@@ -1,5 +1,5 @@
 # fahclient
-Helm Chart for Folding at Home Client (FAHClient)
+Helm Chart for Folding@Home Client (FAHClient)
 
 Install [Folding@Home](https://foldingathome.org/) on Kubernetes
 
