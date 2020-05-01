@@ -78,8 +78,20 @@ drop me an e-mail at <serge@se-cured.org>.
 Q: I want to stop folding but don't want work to be lost, what do I need to do?
 
 A: Assuming you have the pods running in a separate namespace where no other pods reside:
-`kubectl get pods -n <yournamespace> | awk '{print $1}' | xargs -I{} kubectl exec {} -- /usr/bin/FAHClient --send-finish`.
+`kubectl get pods -n <yournamespace> | awk '{print $1}' | xargs -I{} kubectl exec {} -- /usr/bin/FAHClient --send-command shutdown`.
 
 Q: How do I set up persistent storage for my cluster quickly?
 
 A: Setup an NFS server in your network or leverage an existing one and setup [nfs-client-provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client).
+
+
+## Helm Hub Compatible Search Terms
+
+Folding@Home
+folding@home
+Folding@home
+folding@Home
+Folding at Home
+Folding At Home
+folding at home
+Folding at home

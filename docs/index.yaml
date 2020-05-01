@@ -2,7 +2,16 @@ apiVersion: v1
 entries:
   fahclient:
   - apiVersion: v2
-    created: "2020-04-30T13:22:16.790048+02:00"
+    created: "2020-05-01T10:56:22.109206+02:00"
+    description: A resilient Helm chart for Folding@Home with GPU support
+    digest: 90d44ca7e3173cb31734f84bc0e79471e150f75a1765e0f9d69d788a0e38b9d1
+    name: fahclient
+    type: application
+    urls:
+    - https://pcktdmp.github.io/charts/fahclient-2.5.2.tgz
+    version: 2.5.2
+  - apiVersion: v2
+    created: "2020-05-01T10:56:22.108017+02:00"
     description: A resilient Helm chart for Folding@Home with GPU support
     digest: 8768763bdc56082a1e0a6ba87967f19b3f84744b493eceaadd1f13e708833e63
     name: fahclient
@@ -11,7 +20,7 @@ entries:
     - https://pcktdmp.github.io/charts/fahclient-2.5.1.tgz
     version: 2.5.1
   - apiVersion: v2
-    created: "2020-04-30T13:22:16.789559+02:00"
+    created: "2020-05-01T10:56:22.107454+02:00"
     description: A resilient Helm chart for Folding@Home with GPU support
     digest: b41c9986e5cd20f1ff8f2b7c838ab7632981cb7b38f8d1e0e40f02b1b12d504c
     name: fahclient
@@ -20,7 +29,7 @@ entries:
     - https://pcktdmp.github.io/charts/fahclient-2.5.0.tgz
     version: 2.5.0
   - apiVersion: v2
-    created: "2020-04-30T13:22:16.789075+02:00"
+    created: "2020-05-01T10:56:22.106355+02:00"
     description: A resilient Helm chart for Folding@Home with GPU support
     digest: cbae996934c969bec2bff90ed799fb3748f8ee4955546b56ba5b3ea19ec0d4af
     name: fahclient
@@ -29,7 +38,7 @@ entries:
     - https://pcktdmp.github.io/charts/fahclient-2.4.0.tgz
     version: 2.4.0
   - apiVersion: v2
-    created: "2020-04-30T13:22:16.7886+02:00"
+    created: "2020-05-01T10:56:22.105436+02:00"
     description: A Helm chart for Kubernetes
     digest: 390522d557426b49263b2dfe2979d6bc36f107facfdc1edd7ca7eaa8df24e07f
     name: fahclient
@@ -39,7 +48,7 @@ entries:
     version: 2.3.0
   - apiVersion: v2
     appVersion: latest
-    created: "2020-04-30T13:22:16.788112+02:00"
+    created: "2020-05-01T10:56:22.103771+02:00"
     description: A Helm chart for Kubernetes
     digest: a33b51ef0306c222bae34108900a375dd86707cb31086cd815fb237d67c30d55
     name: fahclient
@@ -49,7 +58,7 @@ entries:
     version: 2.2.2
   - apiVersion: v2
     appVersion: latest
-    created: "2020-04-30T13:22:16.787622+02:00"
+    created: "2020-05-01T10:56:22.102485+02:00"
     description: A Helm chart for Kubernetes
     digest: d13b6334088775d53f1d5c40ad4ef7032e6ec6304521e0f6651ab5e086d07422
     name: fahclient
@@ -59,7 +68,7 @@ entries:
     version: 2.2.1
   - apiVersion: v2
     appVersion: latest
-    created: "2020-04-30T13:22:16.787141+02:00"
+    created: "2020-05-01T10:56:22.101249+02:00"
     description: A Helm chart for Kubernetes
     digest: ac0d781bbfa642bf8fcfa659c8cf039e7354fa1b35ad409c8d609ac7cad0a731
     name: fahclient
@@ -69,7 +78,7 @@ entries:
     version: 2.1.1
   - apiVersion: v2
     appVersion: latest
-    created: "2020-04-30T13:22:16.786706+02:00"
+    created: "2020-05-01T10:56:22.100367+02:00"
     description: A Helm chart for Kubernetes
     digest: 2b5644d42745e1ac4200c2367743c41709bc5fddba484660ba3b5a0473823853
     name: fahclient
@@ -79,7 +88,7 @@ entries:
     version: 2.1.0
   - apiVersion: v2
     appVersion: latest
-    created: "2020-04-30T13:22:16.785904+02:00"
+    created: "2020-05-01T10:56:22.099385+02:00"
     description: A Helm chart for Kubernetes
     digest: cdc6f32d835a65e5f82e22ee3e47de9cda16f14bcf30656c50cf198d2b2feb6b
     name: fahclient
@@ -89,7 +98,7 @@ entries:
     version: 2.0.2
   - apiVersion: v2
     appVersion: latest
-    created: "2020-04-30T13:22:16.78526+02:00"
+    created: "2020-05-01T10:56:22.098495+02:00"
     description: A Helm chart for Kubernetes
     digest: ed5dbdc5e509c694ccfdab07a74ca80312f26d110daed3128462135b32681cc5
     name: fahclient
@@ -99,7 +108,7 @@ entries:
     version: 2.0.1
   - apiVersion: v2
     appVersion: latest
-    created: "2020-04-30T13:22:16.784819+02:00"
+    created: "2020-05-01T10:56:22.097486+02:00"
     description: A Helm chart for Kubernetes
     digest: 6c4476f6b0e5e64d42e989d085d12ecd81efad9593c37c1320aa0aeefb5a7184
     name: fahclient
@@ -109,7 +118,7 @@ entries:
     version: 2.0.0
   - apiVersion: v2
     appVersion: latest
-    created: "2020-04-30T13:22:16.784408+02:00"
+    created: "2020-05-01T10:56:22.096454+02:00"
     description: A Helm chart for Kubernetes
     digest: ff3222e0cd665b0f0107ea29ab6f2c65f4cbe5c54ad251330f834b623ca0db6e
     name: fahclient
@@ -119,7 +128,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: latest
-    created: "2020-04-30T13:22:16.78395+02:00"
+    created: "2020-05-01T10:56:22.095712+02:00"
     description: A Helm chart for Kubernetes
     digest: aca1dba0b1b53eb9bd8c65350beb7dd400d570fc30e94d94214dd83f079acfc6
     name: fahclient
@@ -127,4 +136,4 @@ entries:
     urls:
     - https://pcktdmp.github.io/charts/fahclient-1.0.0.tgz
     version: 1.0.0
-generated: "2020-04-30T13:22:16.783063+02:00"
+generated: "2020-05-01T10:56:22.093128+02:00"
