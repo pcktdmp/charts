@@ -6,8 +6,8 @@ replicaCount: 1
 
 image:
   repository: foldingathome/fah-gpu
-  tag: 7.5.1
-  pullPolicy: IfNotPresent
+  tag: latest
+  pullPolicy: Always
 
 # to use Vertical Pod Autoscaling install:
 # https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler
@@ -29,20 +29,20 @@ fahClient:
     accelerator: nvidia-tesla-p100 # or nvidia-tesla-k80 etc.
   configXml: |
     <config>
-    <!-- Set with your user, passkey, team-->
-    <user value="Anonymous"/>
-    <passkey value=""/>
-    <team value="0"/>
-  
-    <power value="full"/>
-  
-    <web-enable v='false'/>
-    <disable-viz v='true'/>
-    <gui-enabled v='false'/>
-    <!-- 1 slots for GPUs -->
-    <!-- beta feature: uncomment the statement below if you have set
-    fahClient.gpu.enabled to true -->
-    <!-- <slot id='0' type='GPU'> </slot> -->
+      <!-- Set with your user, passkey, team-->
+      <user value="Anonymous"/>
+      <passkey value=""/>
+      <team value="0"/>
+
+      <power value="full"/>
+
+      <web-enable v='false'/>
+      <disable-viz v='true'/>
+      <gui-enabled v='false'/>
+      <!-- 1 slots for GPUs -->
+      <!-- beta feature: uncomment the statement below if you have set
+      fahClient.gpu.enabled to true -->
+      <!-- <slot id='0' type='GPU'> </slot> -->
     </config>
 
 imagePullSecrets: []
