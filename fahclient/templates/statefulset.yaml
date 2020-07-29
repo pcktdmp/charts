@@ -26,7 +26,13 @@ spec:
       initContainers:
       - name: init
         image: alpine:latest
-        command: ['sh', '-c', "mkdir -p /fah && chown -R {{ .Values.securityContext.runAsUser }}:{{ .Values.securityContext.runAsGroup }} /fah"]
+        command: ['sh', '-c', "mkdir -p /fah && cp -f /tmp/fahclient/config.xml /fah/config.xml && chown -R {{ .Values.securityContext.runAsUser }}:{{ .Values.securityContext.runAsGroup }} /fah"]
+        volumeMounts:
+          - name: fah
+            mountPath: /fah
+          - name: fahclient-config
+            mountPath: /tmp/fahclient/config.xml
+            subPath: config.xml
       containers:
       - name: {{ .Chart.Name }}
         securityContext:
@@ -48,9 +54,6 @@ spec:
         volumeMounts:
         - name: fah
           mountPath: /fah
-        - name: fahclient-config
-          mountPath: /etc/fahclient/config.xml
-          subPath: config.xml
         resources:
           {{- if .Values.fahClient.gpu.enabled }}
             limits:

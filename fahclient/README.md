@@ -44,8 +44,8 @@ drop me an e-mail at <serge@se-cured.org>.
 | horizontalPodAutoscaling.minReplicas | int | `1` |  |
 | horizontalPodAutoscaling.targetCPUUtilizationPercentage | int | `90` |  |
 | storageClassName | string | `""` | When not specified take the default storage class |
-| image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"johnktims/folding-at-home"` |  |
+| image.pullPolicy | string | `"Always"` |  |
+| image.repository | string | `"foldingathome/fah-gpu"` |  |
 | image.tag | string | `"latest"` |  |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
