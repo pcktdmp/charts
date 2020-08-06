@@ -11,6 +11,7 @@ https://foldingathome.org/2020/03/15/coronavirus-what-were-doing-and-how-you-can
 
 Companies, enterprises and individuals can donate their compute capacity that is available inside their Kubernetes clusters to foldingathome.org.
 
+
 ## Features
 
 * Make use of `StatefulSet` with Persistent Volumes so that compute capacity does not get lost when being rescheduled on other nodes.
@@ -24,6 +25,7 @@ This fits for example the design pattern of using Spot Instances in AWS EKS.
 helm repo add pcktdmp https://pcktdmp.github.io/charts
 helm install pcktdmp/fahclient --name fahclient
 ```
+
 ## Support
 
 If you need basic support to getting up and running please
@@ -84,6 +86,13 @@ Q: How do I set up persistent storage for my cluster quickly?
 
 A: Setup an NFS server in your network or leverage an existing one and setup [nfs-client-provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client).
 
+## Package release
+
+```bash
+helm package fahclient
+mv fahclient-x.x.x.tgz docs/
+helm repo index --url https://pcktdmp.github.io/charts docs
+```
 
 ## Helm Hub Compatible Search Terms
 
