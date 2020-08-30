@@ -23,10 +23,12 @@ spec:
       priorityClassName: {{ .Values.priorityClassName }}
       {{- end }}
       terminationGracePeriodSeconds: 45
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       initContainers:
       - name: init
         image: alpine:latest
-        command: ['sh', '-c', "mkdir -p /fah && cp -f /tmp/fahclient/config.xml /fah/config.xml && chown -R {{ .Values.securityContext.runAsUser }}:{{ .Values.securityContext.runAsGroup }} /fah"]
+        command: ['sh', '-c', "cp -f /tmp/fahclient/config.xml /fah/config.xml"]
         volumeMounts:
           - name: fah
             mountPath: /fah
@@ -41,9 +43,9 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
           - name: PUID
-            value: {{ .Values.securityContext.runAsUser | quote }}
+            value: {{ .Values.podSecurityContext.runAsUser | quote }}
           - name: PGID
-            value: {{ .Values.securityContext.runAsGroup | quote }}
+            value: {{ .Values.podSecurityContext.runAsGroup | quote }}
         lifecycle:
           preStop:
             exec:

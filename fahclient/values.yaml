@@ -58,14 +58,16 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name:
 
-securityContext:
-  capabilities:
-    drop:
-    - ALL
-  readOnlyRootFilesystem: false 
+podSecurityContext:
   runAsNonRoot: true
   runAsUser: 9999
   runAsGroup: 9999
+
+securityContext:
+  capabilities:
+    drop:
+      - ALL
+  readOnlyRootFilesystem: false
 
 service:
   type: ClusterIP
