@@ -26,7 +26,7 @@ spec:
       initContainers:
       - name: init
         image: alpine:latest
-        command: ['sh', '-c', "mkdir -p /fah && cp -f /tmp/fahclient/config.xml /fah/config.xml && chown -R {{ .Values.securityContext.runAsUser }}:{{ .Values.securityContext.runAsGroup }} /fah"]
+        command: ['sh', '-c', "mkdir -p /fah && cp -f /tmp/fahclient/config.xml /fah/config.xml"]
         volumeMounts:
           - name: fah
             mountPath: /fah
