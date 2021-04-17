@@ -50,11 +50,11 @@ drop me an e-mail at <serge@se-cured.org>.
 | image.repository | string | `"foldingathome/fah-gpu"` |  |
 | image.tag | string | `"latest"` |  |
 | imagePullSecrets | list | `[]` |  |
+| ingress.enabled | bool | `false` | Enable Ingress for WebUI |
 | ingress.annotations | object | `{}` |  |
-| ingress.enabled | bool | `false` |  |
-| ingress.hosts[0].host | string | `"chart-example.local"` |  |
-| ingress.hosts[0].paths | list | `[]` |  |
-| ingress.tls | list | `[]` |  |
+| ingress.host | string | `"chart-example.local"` |  |
+| ingress.path | string | `/` |  |
+| ingress.tls | bool | `false` | Enable TLS for Ingress |
 | nameOverride | string | `""` |  |
 | podSecurityContext.fsGroup | int | `9999` |  |
 | priorityClassName | string | `nil` | When not specified, take the default priority class |

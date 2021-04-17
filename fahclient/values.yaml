@@ -37,6 +37,10 @@ fahClient:
       <power value="full"/>
 
       <web-enable v='false'/>
+      <!-- Uncomment when using ingress: -->
+      <!-- <allow v='127.0.0.1 10.0.0.0/8 192.168.0.0/16' />
+      <web-allow v='127.0.0.1 10.0.0.0/8 192.168.0.0/16' /> -->
+
       <disable-viz v='true'/>
       <gui-enabled v='false'/>
       <!-- 1 slots for GPUs -->
@@ -70,9 +74,26 @@ securityContext:
       - ALL
   readOnlyRootFilesystem: false
 
+# Don't forget to enable external access in configmap, to access service
 service:
   type: ClusterIP
   port: 80
+
+# Ingress for WebUI
+# Don't forget to enable external access in configmap, too
+ingress:
+  enabled: false
+  hostname: chart-example.local
+  path: /
+
+  # Enable TLS for Ingress e.g. letsencrypt using cert-manager
+  tls: false
+
+  # Ingress Annotations
+  annotations:
+    #cert-manager.io/cluster-issuer: cluster-issuer
+    #kubernetes.io/ingress.class: nginx
+    #ingress.kubernetes.io/ssl-redirect: 'true'
 
 storageClassName: ""
 
