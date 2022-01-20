@@ -66,6 +66,10 @@ spec:
       nodeSelector:
         accelerator: {{ .Values.fahClient.gpu.accelerator }}
       {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
   volumeClaimTemplates:
   - metadata:
       name: fah
