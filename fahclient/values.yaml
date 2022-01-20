@@ -85,3 +85,13 @@ resources:
   requests:
     cpu: 1.0
     memory: 128Mi
+
+# Pod affinity.  Example below doesn't allow more than one pod per node
+#affinity:
+#  podAntiAffinity:
+#    requiredDuringSchedulingIgnoredDuringExecution:
+#    - labelSelector:
+#        matchLabels:
+#          app: fah-fahclient  # This is the label on the pod, which is `app: {{ include "fahclient.fullname" . }}`
+#      topologyKey: kubernetes.io/hostname
+affinity: {}
